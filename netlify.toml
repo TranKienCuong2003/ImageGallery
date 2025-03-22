@@ -1,0 +1,21 @@
+[images]
+  remote_images = [
+    "https://images.unsplash.com/*"
+  ]
+
+[build]
+  command = "bun run build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_USE_NETLIFY_EDGE = "true"
+  NEXT_FORCE_EDGE_IMAGES = "true"
+  NEXT_IMAGE_ALLOWED_DOMAINS = "images.unsplash.com"
+
+[dev]
+  command = "bun run dev"
+  port = 3000
+  framework = "nextjs"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
